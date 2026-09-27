@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FORESTIQ — AI-Powered Forest Foresight & Predictive Protection</title>
+  <meta name="description"
+    content="FORESTIQ adalah platform forest intelligence berbasis AI dan IoT untuk pemantauan kondisi hutan secara real-time, prediksi risiko kebakaran, dan perlindungan ekosistem berkelanjutan." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23064E3B'/><ellipse cx='50' cy='50' rx='38' ry='16' fill='none' stroke='%2300F5A0' stroke-width='3' transform='rotate(30 50 50)'/><ellipse cx='50' cy='50' rx='38' ry='16' fill='none' stroke='%2334D399' stroke-width='3' transform='rotate(-30 50 50)'/><path d='M50 26 C40 40 42 62 50 72 C58 62 60 40 50 26 Z' fill='%2310B981'/><path d='M50 36 C45 46 46 58 50 66 C55 58 56 46 50 36 Z' fill='%2300F5A0'/></svg>" />
+</head>
+
+<body>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo" aria-label="FORESTIQ">
+        <img src="assets/images/forestiq_horizontal_light.png" alt="FORESTIQ" class="nav-logo-img dark-mode-logo" />
+        <img src="assets/images/forestiq_horizontal.png" alt="FORESTIQ" class="nav-logo-img light-mode-logo" />
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about" data-lang-en="About" data-lang-id="Tentang">Tentang</a>
+        <a href="#features" data-lang-en="6 Pillars" data-lang-id="6 Pilar">6 Pilar</a>
+        <a href="#simulator" data-lang-en="FHI Simulator" data-lang-id="Simulator FHI">Simulator FHI</a>
+        <a href="#prototype" data-lang-en="Prototype" data-lang-id="Prototype">Prototype</a>
+        <a href="#comparison" data-lang-en="Comparison" data-lang-id="Komparasi">Komparasi</a>
+        <a href="#pricing" data-lang-en="Pricing" data-lang-id="Paket Layanan">Paket Layanan</a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="id" onclick="setLanguage('id')">ID</button>
+          <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+        </div>
+        <button class="nav-cta" onclick="openModal('demoModal')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" width="16" height="16">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          <span data-lang-en="Request Demo" data-lang-id="Minta Demo">Minta Demo</span>
+        </button>
+      </div>
+
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Overlay & Drawer -->
+  <div class="mobile-nav-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#about" data-lang-en="About" data-lang-id="Tentang">Tentang</a>
+    <a href="#features" data-lang-en="6 Core Pillars" data-lang-id="6 Pilar Utama">6 Pilar Utama</a>
+    <a href="#simulator" data-lang-en="FHI Simulator" data-lang-id="Simulator FHI">Simulator FHI</a>
+    <a href="#prototype" data-lang-en="Interactive Prototype" data-lang-id="Prototype Interaktif">Prototype Interaktif</a>
+    <a href="#comparison" data-lang-en="Comparison Matrix" data-lang-id="Komparasi Kompetitor">Komparasi Kompetitor</a>
+    <a href="#pricing" data-lang-en="Subscription Plans" data-lang-id="Paket Langganan">Paket Langganan</a>
+    <div class="mobile-lang-toggle">
+      <button class="mobile-lang-btn active" data-lang="id" onclick="setLanguage('id')">Bahasa Indonesia</button>
+      <button class="mobile-lang-btn" data-lang="en" onclick="setLanguage('en')">English</button>
+    </div>
+    <button class="mobile-cta-btn" onclick="openModal('demoModal'); closeMobileNav();" data-lang-en="Schedule Consultation" data-lang-id="Jadwalkan Konsultasi">
+      Jadwalkan Konsultasi
+    </button>
+  </div>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-orb"></div>
+    <div class="hero-bg-orb"></div>
+    <div class="hero-bg-orb"></div>
+    <div class="hero-grid"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse"></span>
+          <span data-lang-en="AI-Powered Forest Foresight • SPECTRA 2026"
+            data-lang-id="Forest Intelligence Berbasis AI & IoT • SPECTRA 2026">Forest Intelligence Berbasis AI & IoT • SPECTRA 2026</span>
+        </div>
+
+        <h1 class="hero-title">
+          FOREST<span class="title-accent">IQ</span>
+        </h1>
+        <p class="hero-tagline"
+          data-lang-en="From Reactive Monitoring to Predictive Forest Protection"
+          data-lang-id="Beralih Dari Pemantauan Reaktif Menuju Perlindungan Hutan Prediktif">
+          Beralih Dari Pemantauan Reaktif Menuju Perlindungan Hutan Prediktif
+        </p>
+        <p class="hero-description"
+          data-lang-en="Integrates ground IoT telemetry (temperature, smoke, flame, humidity, soil moisture) with satellite remote sensing and AI analytics to predict wildfire risks, detect ecosystem anomalies, and dispatch proactive protection recommendations."
+          data-lang-id="Mengintegrasikan sensor IoT (suhu, asap, api, kelembapan, kelembapan tanah) dan data satelit dengan AI untuk mendeteksi anomali mikroklimat, memprediksi risiko karhutla secara dini, serta menyajikan rekomendasi tindakan preventif yang terukur.">
+          Mengintegrasikan sensor IoT (suhu, asap, api, kelembapan, kelembapan tanah) dan data satelit dengan AI untuk mendeteksi anomali mikroklimat, memprediksi risiko karhutla secara dini, serta menyajikan rekomendasi tindakan preventif yang terukur.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#prototype" class="btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round" width="20" height="20">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+              <line x1="12" y1="18" x2="12.01" y2="18" />
+            </svg>
+            <span data-lang-en="Explore Prototype" data-lang-id="Eksplorasi Prototype">Eksplorasi Prototype</span>
+          </a>
+          <button class="btn-secondary" onclick="openModal('demoModal')">
+            <span data-lang-en="Request Pilot Project" data-lang-id="Ajukan Pilot Project">Ajukan Pilot Project</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round" width="18" height="18">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="stat-number">99.2%</div>
+            <div class="stat-label" data-lang-en="AI Risk Accuracy" data-lang-id="Akurasi Analisis AI">Akurasi Analisis AI</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-number">6 Pillars</div>
+            <div class="stat-label" data-lang-en="Integrated Foresight" data-lang-id="Pilar Intelijen Terpadu">Pilar Intelijen Terpadu</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label" data-lang-en="Real-Time Telemetry" data-lang-id="Telemetri Real-Time">Telemetri Real-Time</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-number">SDGs</div>
+            <div class="stat-label" data-lang-en="9, 13, 15 Impact" data-lang-id="Dampak 9, 13, 15">Dampak 9, 13, 15</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERO VISUAL: 3D Floating Mobile Phone Mockup (User Prototype Screen 1, 2, 3) -->
+      <div class="hero-visual">
+        <div class="phone-glow"></div>
+
+        <!-- Main Phone: Screen 1 (Dashboard: FHI 91/100 & Interactive Map) -->
+        <div class="phone-mockup">
+          <div class="phone-frame">
+            <img src="assets/images/proto_dashboard.png" alt="FORESTIQ Forest Intelligence Dashboard" class="phone-img-screen" />
+          </div>
+        </div>
+
+        <!-- Floating Secondary Phone 1: Prototype Screen 2 (Warning Detected Zone 07) -->
+        <div class="phone-float phone-float-1">
+          <div class="phone-frame">
+            <img src="assets/images/proto_warning.png" alt="AI Warning Detected Zone 07" class="phone-img-screen" />
+          </div>
+        </div>
+
+        <!-- Floating Secondary Phone 2: Prototype Screen 3 (Forest Change Alert Zone 12) -->
+        <div class="phone-float phone-float-2">
+          <div class="phone-frame">
+            <img src="assets/images/proto_change.png" alt="Forest Change Alert Zone 12" class="phone-img-screen" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ==================== SPONSORS & ENDORSEMENTS ==================== -->
+  <section class="sponsors" id="sponsors">
+    <div class="container">
+      <div class="reveal">
+        <p class="sponsors-label"
+          data-lang-en="Supported By & In Collaboration With"
+          data-lang-id="Didukung & Berkolaborasi Dengan">
+          Didukung & Berkolaborasi Dengan
+        </p>
+        <div class="sponsors-logos">
+          <div class="sponsor-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            <div>
+              <div class="sponsor-name">CDK Wil. Sumenep</div>
+              <div class="sponsor-sub">Dinas Kehutanan Prov. Jatim</div>
+            </div>
+          </div>
+
+          <div class="sponsor-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+            <div>
+              <div class="sponsor-name">Kompetisi SPECTRA</div>
+              <div class="sponsor-sub">National Business Innovation</div>
+            </div>
+          </div>
+
+          <div class="sponsor-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2">
+              <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+            </svg>
+            <div>
+              <div class="sponsor-name">BMKG Telemetry</div>
+              <div class="sponsor-sub">Climate & Hotspot Integration</div>
+            </div>
+          </div>
+
+          <div class="sponsor-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M8 12l2 2 4-4"/>
+            </svg>
+            <div>
+              <div class="sponsor-name">SDGs 9, 13, 15</div>
+              <div class="sponsor-sub">United Nations Goals</div>
+            </div>
+          </div>
+
+          <div class="sponsor-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+            <div>
+              <div class="sponsor-name">SaaS Forestry Concession</div>
+              <div class="sponsor-sub">HPH & HPHT Partner Ready</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT & PARADIGM SHIFT ==================== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <!-- Visual Anomaly Phone & Telemetry Card -->
+        <div class="about-visual-card reveal-left">
+          <div style="display:flex; gap:22px; align-items:center; margin-bottom:22px; flex-wrap:wrap;">
+            <div style="width:160px; flex-shrink:0; margin:0 auto;">
+              <div class="phone-frame" style="border-radius:28px; padding:6px; box-shadow:0 15px 35px rgba(0,0,0,0.35);">
+                <img src="assets/images/proto_warning.png" alt="FORESTIQ Anomaly Alert Prototype" style="border-radius:22px; width:100%;" />
+              </div>
+            </div>
+            <div style="flex:1; min-width:200px;">
+              <div class="anomaly-alert-preview" style="margin-bottom:0;">
+                <div class="alert-pill">
+                  <span>●</span> <span data-lang-en="National Hotspot Threat 2026" data-lang-id="Ancaman Karhutla Nasional 2026">Ancaman Karhutla Nasional 2026</span>
+                </div>
+                <div class="stat-diff-row">
+                  <span data-lang-en="National Deforestation 2024" data-lang-id="Deforestasi Netto Nasional">Deforestasi Netto Nasional</span>
+                  <span class="val danger">175.437,7 ha</span>
+                </div>
+                <div class="stat-diff-row">
+                  <span data-lang-en="Kalteng Hotspots (Aug 2026)" data-lang-id="Hotspot Kalimantan Tengah">Hotspot Kalimantan Tengah</span>
+                  <span class="val danger">19.992 Hotspot</span>
+                </div>
+                <div class="stat-diff-row">
+                  <span data-lang-en="Kalbar Burned Area (2026)" data-lang-id="Luas Terbakar Kalbar (2026)">Luas Terbakar Kalbar (2026)</span>
+                  <span class="val danger">38.310,86 ha</span>
+                </div>
+                <div class="stat-diff-row">
+                  <span data-lang-en="Niño 3.4 Sea Temp Anomaly" data-lang-id="Anomali Suhu Niño 3.4">Anomali Suhu Niño 3.4</span>
+                  <span class="val danger">+2,76°C (Dry Peak)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paradigm Shift Box -->
+          <div class="paradigm-shift-banner">
+            <div class="shift-col">
+              <div class="label" data-lang-en="Past Approach" data-lang-id="Metode Konvensional">Metode Konvensional</div>
+              <div class="val" style="color:#F87171;" data-lang-en="Reactive Monitoring" data-lang-id="Reactive Monitoring">Reactive Monitoring</div>
+              <div style="font-size:0.75rem; color:#94A3B8; margin-top:2px;" data-lang-en="Detect after fire spreads" data-lang-id="Deteksi setelah api meluas">Deteksi setelah api meluas</div>
+            </div>
+            <div class="shift-arrow">➔</div>
+            <div class="shift-col">
+              <div class="label" data-lang-en="FORESTIQ Innovation" data-lang-id="Inovasi FORESTIQ">Inovasi FORESTIQ</div>
+              <div class="val" style="color:#00F5A0;" data-lang-en="Predictive Protection" data-lang-id="Predictive Protection">Predictive Protection</div>
+              <div style="font-size:0.75rem; color:#A7F3D0; margin-top:2px;" data-lang-en="Foresight before fire starts" data-lang-id="Pencegahan sebelum api terjadi">Pencegahan sebelum api terjadi</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- About Text Description -->
+        <div class="about-content reveal-right">
+          <div class="section-badge">
+            <span class="badge-dot"></span>
+            <span data-lang-en="About FORESTIQ" data-lang-id="Tentang FORESTIQ">Tentang FORESTIQ</span>
+          </div>
+          <h2>
+            <span data-lang-en="Protecting Indonesian Forests Through" data-lang-id="Melindungi Hutan Indonesia Melalui">Melindungi Hutan Indonesia Melalui</span>
+            <span class="highlight" data-lang-en=" Artificial Intelligence & IoT" data-lang-id=" Kecerdasan AI & IoT"> Kecerdasan AI & IoT</span>
+          </h2>
+          <p data-lang-en="FORESTIQ is a B2B Software-as-a-Service (SaaS) forest intelligence platform born to combat catastrophic wildfires and forest degradation. By deploying robust ground IoT sensor arrays (measuring ambient temperature, smoke, flame, air humidity, and soil moisture) and fusing them with satellite telemetry, FORESTIQ's AI engine detects early anomalies and empowers forestry authorities with actionable foresight."
+            data-lang-id="FORESTIQ hadir sebagai platform forest intelligence berbasis Business-to-Business (B2B) SaaS untuk menjawab lonjakan kebakaran hutan dan lahan serta keterbatasan observasi lapangan manual. Mengintegrasikan sensor IoT lapangan (suhu, asap, api, kelembapan tanah) dengan citra satelit dan analitik kecerdasan buatan, FORESTIQ memprediksi titik bahaya sebelum kerusakan meluas.">
+            FORESTIQ hadir sebagai platform forest intelligence berbasis Business-to-Business (B2B) SaaS untuk menjawab lonjakan kebakaran hutan dan lahan serta keterbatasan observasi lapangan manual. Mengintegrasikan sensor IoT lapangan (suhu, asap, api, kelembapan tanah) dengan citra satelit dan analitik kecerdasan buatan, FORESTIQ memprediksi titik bahaya sebelum kerusakan meluas.
+          </p>
+
+          <div class="about-highlights stagger-children">
+            <div class="about-highlight-item">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <span data-lang-en="Multi-Sensor Ground IoT" data-lang-id="Sensor IoT Terpadu">Sensor IoT Terpadu</span>
+            </div>
+
+            <div class="about-highlight-item">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <span data-lang-en="Pre-Ignition Risk Foresight" data-lang-id="Prediksi Sebelum Titik Api">Prediksi Sebelum Titik Api</span>
+            </div>
+
+            <div class="about-highlight-item">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              </div>
+              <span data-lang-en="Automated Smart Alert" data-lang-id="Sistem Early Warning Cepat">Sistem Early Warning Cepat</span>
+            </div>
+
+            <div class="about-highlight-item">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              </div>
+              <span data-lang-en="Targeted Patrol Recommendation" data-lang-id="Rekomendasi Patroli Terarah">Rekomendasi Patroli Terarah</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 6 CORE VALUE PILLARS ==================== -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span data-lang-en="Core Value Pillars" data-lang-id="6 Pilar Nilai Utama">6 Pilar Nilai Utama</span>
+        </div>
+        <h2 class="section-title">
+          <span data-lang-en="Complete Forest Intelligence," data-lang-id="Solusi Lengkap Intelijen Hutan,">Solusi Lengkap Intelijen Hutan,</span><br />
+          <span class="highlight" data-lang-en="Unified In One Digital Ecosystem" data-lang-id="Terintegrasi Dalam Satu Ekosistem">Terintegrasi Dalam Satu Ekosistem</span>
+        </h2>
+        <p class="section-subtitle"
+          data-lang-en="Engineered to provide end-to-end capabilities from ground telemetry ingestion to AI-powered strategic intervention."
+          data-lang-id="Dirancang khusus untuk menghadirkan kapabilitas menyeluruh dari pengumpulan data sensor mikroklimat hingga rekomendasi mitigasi taktis di lapangan.">
+          Dirancang khusus untuk menghadirkan kapabilitas menyeluruh dari pengumpulan data sensor mikroklimat hingga rekomendasi mitigasi taktis di lapangan.
+        </p>
+      </div>
+
+      <div class="features-grid stagger-children">
+        <!-- Pillar 1: Smart Forest Monitoring -->
+        <div class="feature-card">
+          <div class="feature-icon icon-monitoring">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            </svg>
+          </div>
+          <h3 data-lang-en="Smart Forest Monitoring" data-lang-id="Smart Forest Monitoring">Smart Forest Monitoring</h3>
+          <p data-lang-en="Continuous real-time microclimate data collection from IoT nodes tracking ambient temperature, smoke particles, flame presence, air humidity, and soil moisture levels across high-risk forest zones."
+            data-lang-id="Pemantauan kondisi mikroklimat hutan secara berkelanjutan melalui sensor IoT yang memonitor suhu, partikel asap, titik api, kelembapan udara, dan kelembapan tanah pada titik-titik strategis kawasan.">
+            Pemantauan kondisi mikroklimat hutan secara berkelanjutan melalui sensor IoT yang memonitor suhu, partikel asap, titik api, kelembapan udara, dan kelembapan tanah pada titik-titik strategis kawasan.
+          </p>
+          <span class="feature-tag" data-lang-en="📡 IoT Multi-Sensor" data-lang-id="📡 Multi-Sensor IoT">📡 Multi-Sensor IoT</span>
+        </div>
+
+        <!-- Pillar 2: AI Risk Prediction -->
+        <div class="feature-card">
+          <div class="feature-icon icon-prediction">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+              <line x1="12" y1="22.08" x2="12" y2="12"/>
+            </svg>
+          </div>
+          <h3 data-lang-en="AI Risk Prediction" data-lang-id="AI Risk Prediction">AI Risk Prediction</h3>
+          <p data-lang-en="Machine learning models analyze historical patterns and real-time environmental fluctuations to forecast fire risk probability and pre-ignition vulnerability days before any visible flames erupt."
+            data-lang-id="Model machine learning menganalisis data historis dan dinamika lingkungan untuk memprediksi probabilitas risiko karhutla serta kerentanan vegetasi sebelum percikan api pertama muncul.">
+            Model machine learning menganalisis data historis dan dinamika lingkungan untuk memprediksi probabilitas risiko karhutla serta kerentanan vegetasi sebelum percikan api pertama muncul.
+          </p>
+          <span class="feature-tag" data-lang-en="🤖 Machine Learning" data-lang-id="🤖 Algoritma AI">🤖 Algoritma AI</span>
+        </div>
+
+        <!-- Pillar 3: Smart Alert System -->
+        <div class="feature-card">
+          <div class="feature-icon icon-alert">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+            </svg>
+          </div>
+          <h3 data-lang-en="Smart Alert" data-lang-id="Smart Alert">Smart Alert</h3>
+          <p data-lang-en="Automated instant multi-channel notifications (Push, SMS, Dashboard) dispatched as soon as anomalous microclimate thresholds or elevated fire danger indices are detected."
+            data-lang-id="Notifikasi otomatis seketika melalui aplikasi, dashboard, maupun SMS kepada tim respons saat terdeteksi lonjakan suhu abnormal, penurunan drastis kelembapan, atau indikasi risiko tinggi.">
+            Notifikasi otomatis seketika melalui aplikasi, dashboard, maupun SMS kepada tim respons saat terdeteksi lonjakan suhu abnormal, penurunan drastis kelembapan, atau indikasi risiko tinggi.
+          </p>
+          <span class="feature-tag" data-lang-en="⚡ Real-Time Push" data-lang-id="⚡ Notifikasi Kilat">⚡ Notifikasi Kilat</span>
+        </div>
+
+        <!-- Pillar 4: Environmental Change Detection -->
+        <div class="feature-card">
+          <div class="feature-icon icon-anomaly">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <h3 data-lang-en="Environmental Change Detection" data-lang-id="Environmental Change Detection">Environmental Change Detection</h3>
+          <p data-lang-en="Identifies microclimate abnormalities, illegal deforestation, canopy cover reduction (e.g. 4.7 ha area change alert), and severe drought anomalies across catchment sectors."
+            data-lang-id="Mendeteksi anomali lingkungan, deforestasi ilegal, perubahan tutupan kanopi (seperti deteksi kehilangan 4,7 ha di Zona 12), serta kekeringan ekstrim antar sektor secara presisi.">
+            Mendeteksi anomali lingkungan, deforestasi ilegal, perubahan tutupan kanopi (seperti deteksi kehilangan 4,7 ha di Zona 12), serta kekeringan ekstrim antar sektor secara presisi.
+          </p>
+          <span class="feature-tag" data-lang-en="🛰️ Satellite & IoT Fusion" data-lang-id="🛰️ Fusi Satelit & Sensor">🛰️ Fusi Satelit & Sensor</span>
+        </div>
+
+        <!-- Pillar 5: Forest Intelligence Analytics -->
+        <div class="feature-card">
+          <div class="feature-icon icon-analytics">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10"/>
+              <line x1="12" y1="20" x2="12" y2="4"/>
+              <line x1="6" y1="20" x2="6" y2="14"/>
+            </svg>
+          </div>
+          <h3 data-lang-en="Forest Intelligence Analytics" data-lang-id="Forest Intelligence Analytics">Forest Intelligence Analytics</h3>
+          <p data-lang-en="Comprehensive visual dashboard presenting Forest Health Score (FHI), Fire Risk Score, Interactive Multi-Zone Vector Maps, Historical Trends, and critical microclimate indicators."
+            data-lang-id="Dashboard eksekutif dan operasional yang menampilkan Forest Health Score (FHI), Fire Risk Score, peta vektor interaktif zonasi risiko, tren historis, serta indikator mikroklimat mendalam.">
+            Dashboard eksekutif dan operasional yang menampilkan Forest Health Score (FHI), Fire Risk Score, peta vektor interaktif zonasi risiko, tren historis, serta indikator mikroklimat mendalam.
+          </p>
+          <span class="feature-tag" data-lang-en="📊 Interactive Dashboard" data-lang-id="📊 Visualisasi Analitik">📊 Visualisasi Analitik</span>
+        </div>
+
+        <!-- Pillar 6: Predictive Protection Recommendation -->
+        <div class="feature-card">
+          <div class="feature-icon icon-recommendation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <h3 data-lang-en="Predictive Protection Recommendation" data-lang-id="Predictive Protection Recommendation">Predictive Protection Recommendation</h3>
+          <p data-lang-en="AI formulates prioritized tactical actions based on calculated risk levels: suggesting field ground-verification, increased patrol routing frequency, and targeted resource mobilization."
+            data-lang-id="Kecerdasan AI merumuskan langkah perlindungan konkret berdasarkan skala ancaman: memprioritaskan verifikasi lapangan, optimalisasi rute patroli ranger, dan mobilisasi sumber daya tepat sasaran.">
+            Kecerdasan AI merumuskan langkah perlindungan konkret berdasarkan skala ancaman: memprioritaskan verifikasi lapangan, optimalisasi rute patroli ranger, dan mobilisasi sumber daya tepat sasaran.
+          </p>
+          <span class="feature-tag" data-lang-en="🎯 Proactive Action" data-lang-id="🎯 Tindakan Terarah">🎯 Tindakan Terarah</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== INTERACTIVE TELEMETRY & FHI SIMULATOR ==================== -->
+  <section class="simulator-section" id="simulator">
+    <div class="simulator-bg-glow"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge dark-badge">
+          <span class="badge-dot"></span>
+          <span data-lang-en="Interactive Sandbox" data-lang-id="Simulator Interaktif">Simulator Interaktif</span>
+        </div>
+        <h2 class="section-title light-text">
+          <span data-lang-en="Experience AI Forest Foresight" data-lang-id="Simulasikan Daya Analisis AI">Simulasikan Daya Analisis AI</span><br />
+          <span class="highlight" data-lang-en="In Real Time" data-lang-id="Secara Real-Time">Secara Real-Time</span>
+        </h2>
+        <p class="section-subtitle light-sub"
+          data-lang-en="Adjust the IoT environmental sliders below to see how FORESTIQ calculates the Forest Health Index (FHI), assesses wildfire threat levels, and dispatches automated recommendations."
+          data-lang-id="Geser slider parameter lingkungan di bawah untuk melihat bagaimana AI FORESTIQ menghitung Forest Health Index (FHI), mengevaluasi risiko karhutla, dan merumuskan rekomendasi mitigasi secara instan.">
+          Geser slider parameter lingkungan di bawah untuk melihat bagaimana AI FORESTIQ menghitung Forest Health Index (FHI), mengevaluasi risiko karhutla, dan merumuskan rekomendasi mitigasi secara instan.
+        </p>
+      </div>
+
+      <div class="simulator-container reveal-scale">
+        <!-- Controls on Left -->
+        <div class="simulator-controls">
+          <h3 style="margin-bottom:20px; font-size:1.25rem; font-weight:800; color:#fff;" data-lang-en="IoT Sensor Telemetry Controls" data-lang-id="Pengatur Parameter Sensor IoT">
+            Pengatur Parameter Sensor IoT
+          </h3>
+
+          <!-- Temp Slider -->
+          <div class="sim-slider-group">
+            <div class="sim-slider-header">
+              <span data-lang-en="Ambient Temperature (°C)" data-lang-id="Suhu Lingkungan (°C)">Suhu Lingkungan (°C)</span>
+              <span class="sim-slider-val" id="tempVal">31°C</span>
+            </div>
+            <input type="range" class="sim-range-input" id="tempSlider" min="20" max="45" value="31" />
+          </div>
+
+          <!-- Humidity Slider -->
+          <div class="sim-slider-group">
+            <div class="sim-slider-header">
+              <span data-lang-en="Relative Air Humidity (%)" data-lang-id="Kelembapan Udara (%)">Kelembapan Udara (%)</span>
+              <span class="sim-slider-val" id="humVal">68%</span>
+            </div>
+            <input type="range" class="sim-range-input" id="humSlider" min="15" max="95" value="68" />
+          </div>
+
+          <!-- Soil Moisture Slider -->
+          <div class="sim-slider-group">
+            <div class="sim-slider-header">
+              <span data-lang-en="Soil Moisture Index (%)" data-lang-id="Kelembapan Tanah (%)">Kelembapan Tanah (%)</span>
+              <span class="sim-slider-val" id="soilVal">65%</span>
+            </div>
+            <input type="range" class="sim-range-input" id="soilSlider" min="10" max="90" value="65" />
+          </div>
+
+          <!-- Vegetation Dryness Slider -->
+          <div class="sim-slider-group" style="margin-bottom:0;">
+            <div class="sim-slider-header">
+              <span data-lang-en="Vegetation Dryness Factor" data-lang-id="Indeks Kekeringan Vegetasi">Indeks Kekeringan Vegetasi</span>
+              <span class="sim-slider-val" id="dryVal">Low</span>
+            </div>
+            <input type="range" class="sim-range-input" id="drySlider" min="1" max="5" value="1" />
+          </div>
+        </div>
+
+        <!-- Output Cards on Right -->
+        <div class="simulator-output-card">
+          <div class="sim-output-grid">
+            <!-- FHI Score -->
+            <div class="sim-metric-card">
+              <div class="title" data-lang-en="Forest Health Index" data-lang-id="Forest Health Index">Forest Health Index</div>
+              <div class="value" id="fhiOutput">91</div>
+              <div class="badge" id="fhiBadge" data-lang-en="Optimal Condition" data-lang-id="Kondisi Optimal">Kondisi Optimal</div>
+            </div>
+
+            <!-- Fire Risk Score -->
+            <div class="sim-metric-card">
+              <div class="title" data-lang-en="Fire Risk Probability" data-lang-id="Probabilitas Risiko Api">Probabilitas Risiko Api</div>
+              <div class="value" id="riskOutput" style="color:#34D399;">28</div>
+              <div class="badge" id="riskBadge" data-lang-en="Low Risk" data-lang-id="Risiko Rendah">Risiko Rendah</div>
+            </div>
+          </div>
+
+          <!-- AI Tactical Recommendation Box -->
+          <div class="sim-recommendation-box" id="recBox">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+              </svg>
+              <span id="recTitle" data-lang-en="AI System Status: Normal" data-lang-id="Status Sistem AI: Normal">Status Sistem AI: Normal</span>
+            </h4>
+            <p id="recText" data-lang-en="Microclimate parameters indicate resilient canopy hydration and safe ambient thermal levels. Routine periodic sensor polling active across monitored sectors."
+              data-lang-id="Parameter mikroklimat menunjukkan hidrasi kanopi hutan stabil dan suhu lingkungan aman. Pemantauan rutin berkala berjalan normal di seluruh sektor.">
+              Parameter mikroklimat menunjukkan hidrasi kanopi hutan stabil dan suhu lingkungan aman. Pemantauan rutin berkala berjalan normal di seluruh sektor.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROTOTYPE SHOWCASE & GALLERY ==================== -->
+  <section class="prototype-showcase" id="prototype">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span data-lang-en="Prototype Showcase" data-lang-id="Showcase Prototype">Showcase Prototype</span>
+        </div>
+        <h2 class="section-title">
+          <span data-lang-en="Explore the FORESTIQ" data-lang-id="Jelajahi Antarmuka">Jelajahi Antarmuka</span>
+          <span class="highlight" data-lang-en=" Mobile & Web System" data-lang-id=" Sistem FORESTIQ"> Sistem FORESTIQ</span>
+        </h2>
+        <p class="section-subtitle"
+          data-lang-en="Built directly from our mobile prototype design: experience the intuitive screens designed for concession managers and forestry rangers."
+          data-lang-id="Diwujudkan langsung dari desain prototype mobile: nikmati antarmuka intuitif yang dirancang untuk pengelola konsesi hutan dan petugas lapangan.">
+          Diwujudkan langsung dari desain prototype mobile: nikmati antarmuka intuitif yang dirancang untuk pengelola konsesi hutan dan petugas lapangan.
+        </p>
+      </div>
+
+      <!-- Tab Buttons for 5 Prototype Screens -->
+      <div class="prototype-tabs reveal">
+        <button class="proto-tab-btn active" onclick="switchProtoTab(0)">
+          <span>📊</span>
+          <span data-lang-en="1. Dashboard & Map" data-lang-id="1. Dashboard & Peta">1. Dashboard & Peta</span>
+        </button>
+        <button class="proto-tab-btn" onclick="switchProtoTab(1)">
+          <span>⚠️</span>
+          <span data-lang-en="2. AI Warning Alert" data-lang-id="2. Peringatan Dini AI">2. Peringatan Dini AI</span>
+        </button>
+        <button class="proto-tab-btn" onclick="switchProtoTab(2)">
+          <span>🌲</span>
+          <span data-lang-en="3. Forest Change Detection" data-lang-id="3. Deteksi Perubahan Hutan">3. Deteksi Perubahan Hutan</span>
+        </button>
+        <button class="proto-tab-btn" onclick="switchProtoTab(3)">
+          <span>🤖</span>
+          <span data-lang-en="4. AI Tactical Recommendation" data-lang-id="4. Rekomendasi AI">4. Rekomendasi AI</span>
+        </button>
+        <button class="proto-tab-btn" onclick="switchProtoTab(4)">
+          <span>👤</span>
+          <span data-lang-en="5. User Profile & Access" data-lang-id="5. Profil Pengguna">5. Profil Pengguna</span>
+        </button>
+      </div>
+
+      <!-- Active Screen Display Container -->
+      <div class="prototype-active-container reveal-scale" id="protoActiveContainer">
+        <!-- Left: Phone mockup with chosen screen -->
+        <div class="phone-mockup" style="margin:0 auto; width:310px;">
+          <div class="phone-frame" style="box-shadow: 0 25px 65px rgba(0,0,0,0.35);">
+            <img id="protoActiveImg" src="assets/images/proto_dashboard.png" alt="FORESTIQ Prototype Screen" class="phone-img-screen" style="cursor:pointer;" onclick="openScreenZoom(currentProtoIndex)" />
+          </div>
+        </div>
+
+        <!-- Right: Screen Description & Capabilities -->
+        <div class="proto-screen-desc" id="protoScreenDesc">
+          <h3 id="protoDescTitle">Forest Intelligence Dashboard</h3>
+          <p id="protoDescPara">
+            Layar beranda utama yang memberikan pandangan holistik kondisi hutan secara real-time. Dilengkapi Forest Health Index (FHI 91/100), grafik tren gelombang hidrasi, status anomali lingkungan, serta Peta Vektor Hutan interaktif terbagi atas zonasi risiko (Zone 01 - Zone 08).
+          </p>
+          <ul class="proto-feature-bullets" id="protoDescBullets">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Live status telemetri "System Online" dengan pembaharuan berkala.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Tiga indikator ringkas: Fire Risk (28/100), Forest Change (Normal), dan Risk Zone terdeteksi.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Peta poligon interaktif berlabel dengan kode warna bahaya: Hijau (Low), Kuning (Medium), Merah (High).</span>
+            </li>
+          </ul>
+
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button class="btn-primary" onclick="openScreenZoom(currentProtoIndex)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <span data-lang-en="Zoom Screen View" data-lang-id="Perbesar Layar">Perbesar Layar</span>
+            </button>
+            <button class="btn-secondary" onclick="openOriginalModal()">
+              <span data-lang-en="View All Screens Sheet" data-lang-id="Lihat Sketsa Lengkap">Lihat Sketsa Lengkap</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Preview Horizontal Infinite Carousel (Matching Orion's Marquee) -->
+      <div class="preview-carousel reveal">
+        <div class="preview-track-wrapper">
+          <div class="preview-track" id="previewMarqueeTrack">
+            <!-- Set 1 -->
+            <div class="preview-item" onclick="switchProtoTab(0)">
+              <div class="preview-phone-card">
+                <img src="assets/images/proto_dashboard.png" alt="Dashboard & Peta" />
+              </div>
+              <div class="preview-label" data-lang-en="Dashboard & Map" data-lang-id="Dashboard & Peta">Dashboard & Peta</div>
+            </div>
+
+            <div class="preview-item" onclick="switchProtoTab(1)">
+              <div class="preview-phone-card">
+                <img src="assets/images/proto_warning.png" alt="Peringatan Dini AI" />
+              </div>
+              <div class="preview-label" data-lang-en="AI Warning Alert" data-lang-id="Peringatan Dini AI">Peringatan Dini AI</div>
+            </div>
+
+            <div class="preview-item" onclick="switchProtoTab(2)">
+              <div class="preview-phone-card">
+                <img src="assets/images/proto_change.png" alt="Perubahan Hutan" />
+              </div>
+              <div class="preview-label" data-lang-en="Forest Change Alert" data-lang-id="Perubahan Hutan">Perubahan Hutan</div>
+            </div>
+
+            <div class="preview-item" onclick="switchProtoTab(3)">
+              <div class="preview-phone-card">
+                <img src="assets/images/proto_recommendation.png" alt="Rekomendasi AI" />
+              </div>
+              <div class="preview-label" data-lang-en="AI Recommendation" data-lang-id="Rekomendasi AI">Rekomendasi AI</div>
+            </div>
+
+            <div class="preview-item" onclick="switchProtoTab(4)">
+              <div class="preview-phone-card">
+                <img src="assets/images/proto_profile.png" alt="Profil Akun" />
+              </div>
+              <div class="preview-label" data-lang-en="Profile & Access" data-lang-id="Profil & Akun">Profil & Akun</div>
+            </div>
+
+            <!-- Duplicate Set for Seamless Infinite Loop -->
+            <div class="preview-item" onclick="switchProtoTab(0)">
+              <div class="preview-phone-card">
+                <img src="assets/images/proto_dashboard.png" alt="Dashboard & Peta" />
+              </div>
+              <div class="preview-label" data-lang-en="Dashboard & Map" data-lang-id="Dashboard & Peta">Dashboard & Peta</div>
+            </div>
+
+            <div class="preview-item" onclick="switchProtoTab(1)">
+              <div class="preview-phone-card">
+                <img src="assets/images/proto_warning.png" alt="Peringatan Dini AI" />
+              </div>
+              <div class="preview-label" data-lang-en="AI Warning Alert" data-lang-id="Peringatan Dini AI">Peringatan Dini AI</div>
+            </div>
+
+            <div class="preview-item" onclick="switchProtoTab(2)">
+              <div class="preview-phone-card">
+                <img src="assets/images/proto_change.png" alt="Perubahan Hutan" />
+              </div>
+              <div class="preview-label" data-lang-en="Forest Change Alert" data-lang-id="Perubahan Hutan">Perubahan Hutan</div>
+            </div>
+
+            <div class="preview-item" onclick="switchProtoTab(3)">
+              <div class="preview-phone-card">
+                <img src="assets/images/proto_recommendation.png" alt="Rekomendasi AI" />
+              </div>
+              <div class="preview-label" data-lang-en="AI Recommendation" data-lang-id="Rekomendasi AI">Rekomendasi AI</div>
+            </div>
+
+            <div class="preview-item" onclick="switchProtoTab(4)">
+              <div class="preview-phone-card">
+                <img src="assets/images/proto_profile.png" alt="Profil Akun" />
+              </div>
+              <div class="preview-label" data-lang-en="Profile & Access" data-lang-id="Profil & Akun">Profil & Akun</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== COMPETITIVE COMPARISON MATRIX ==================== -->
+  <section class="comparison" id="comparison">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span data-lang-en="Competitive Analysis" data-lang-id="Diferensiasi & Keunggulan">Diferensiasi & Keunggulan</span>
+        </div>
+        <h2 class="section-title">
+          <span data-lang-en="Why Choose " data-lang-id="Mengapa Memilih ">Mengapa Memilih </span>
+          <span class="highlight" data-lang-en="FORESTIQ?" data-lang-id="FORESTIQ?">FORESTIQ?</span>
+        </h2>
+        <p class="section-subtitle"
+          data-lang-en="Direct capability comparison between FORESTIQ, SiPongi+ (MoEF Indonesia), and Pano AI based on our technical market analysis."
+          data-lang-id="Perbandingan kapabilitas teknis antara FORESTIQ, SiPongi+ (KLHK), dan Pano AI berdasarkan riset pasar Bab 2.2 proposal bisnis.">
+          Perbandingan kapabilitas teknis antara FORESTIQ, SiPongi+ (KLHK), dan Pano AI berdasarkan riset pasar Bab 2.2 proposal bisnis.
+        </p>
+      </div>
+
+      <div class="comparison-table-wrapper reveal-scale">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th data-lang-en="Features & Capabilities" data-lang-id="Parameter Kapabilitas">Parameter Kapabilitas</th>
+              <th class="featured-col">FORESTIQ</th>
+              <th>SiPongi+ (KLHK)</th>
+              <th>Pano AI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong data-lang-en="Artificial Intelligence (AI)" data-lang-id="Kecerdasan Buatan (AI)">Kecerdasan Buatan (AI)</strong>
+                <div style="font-size:0.8rem; color:#64748B;" data-lang-en="Predictive modeling & anomaly identification" data-lang-id="Model prediktif & identifikasi anomali">Model prediktif & identifikasi anomali</div>
+              </td>
+              <td class="featured-col"><span class="check-icon">✓</span></td>
+              <td style="text-align:center;"><span class="cross-icon">—</span></td>
+              <td style="text-align:center;"><span class="check-icon">✓</span></td>
+            </tr>
+            <tr>
+              <td>
+                <strong data-lang-en="Ground IoT Multi-Sensors" data-lang-id="Sensor IoT Lapangan">Sensor IoT Lapangan</strong>
+                <div style="font-size:0.8rem; color:#64748B;" data-lang-en="Temperature, smoke, flame, soil moisture" data-lang-id="Suhu, asap, api, kelembapan tanah">Suhu, asap, api, kelembapan tanah</div>
+              </td>
+              <td class="featured-col"><span class="check-icon">✓</span></td>
+              <td style="text-align:center;"><span class="cross-icon">—</span></td>
+              <td style="text-align:center;"><span class="check-icon">✓</span></td>
+            </tr>
+            <tr>
+              <td>
+                <strong data-lang-en="Real-Time Forest Monitoring" data-lang-id="Pemantauan Hutan Real-Time">Pemantauan Hutan Real-Time</strong>
+                <div style="font-size:0.8rem; color:#64748B;" data-lang-en="Continuous environmental updates 24/7" data-lang-id="Update kondisi lingkungan terus menerus 24/7">Update kondisi lingkungan terus menerus 24/7</div>
+              </td>
+              <td class="featured-col"><span class="check-icon">✓</span></td>
+              <td style="text-align:center;"><span class="check-icon">✓</span></td>
+              <td style="text-align:center;"><span class="check-icon">✓</span></td>
+            </tr>
+            <tr>
+              <td>
+                <strong data-lang-en="Active Fire Detection" data-lang-id="Deteksi Kebakaran Aktif">Deteksi Kebakaran Aktif</strong>
+                <div style="font-size:0.8rem; color:#64748B;" data-lang-en="Rapid response when fire is present" data-lang-id="Deteksi saat api menyala di lapangan">Deteksi saat api menyala di lapangan</div>
+              </td>
+              <td class="featured-col"><span class="check-icon">✓</span></td>
+              <td style="text-align:center;"><span class="check-icon">✓</span></td>
+              <td style="text-align:center;"><span class="check-icon">✓</span></td>
+            </tr>
+            <tr>
+              <td>
+                <strong data-lang-en="Pre-Ignition Predictive Fire Risk" data-lang-id="Prediksi Risiko Sebelum Titik Api">Prediksi Risiko Sebelum Titik Api</strong>
+                <div style="font-size:0.8rem; color:#64748B;" data-lang-en="Forest foresight before combustion occurs" data-lang-id="Forest foresight sebelum kebakaran muncul">Forest foresight sebelum kebakaran muncul</div>
+              </td>
+              <td class="featured-col"><span class="check-icon">✓</span></td>
+              <td style="text-align:center;"><span class="cross-icon">—</span></td>
+              <td style="text-align:center;"><span class="cross-icon">—</span></td>
+            </tr>
+            <tr>
+              <td>
+                <strong data-lang-en="Tactical Protection Recommendation" data-lang-id="Rekomendasi Tindakan Preventif">Rekomendasi Tindakan Preventif</strong>
+                <div style="font-size:0.8rem; color:#64748B;" data-lang-en="Field patrol routing & risk zoning" data-lang-id="Zonasi prioritas & pengarahan patroli lapangan">Zonasi prioritas & pengarahan patroli lapangan</div>
+              </td>
+              <td class="featured-col"><span class="check-icon">✓</span></td>
+              <td style="text-align:center;"><span class="cross-icon">—</span></td>
+              <td style="text-align:center;"><span class="cross-icon">—</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== B2B SAAS PRICING TIERS ==================== -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span data-lang-en="Flexible Subscription" data-lang-id="Paket Langganan B2B">Paket Langganan B2B</span>
+        </div>
+        <h2 class="section-title">
+          <span data-lang-en="Tailored for Every " data-lang-id="Dirancang untuk Berbagai ">Dirancang untuk Berbagai </span>
+          <span class="highlight" data-lang-en="Concession Scale" data-lang-id="Skala Konsesi">Skala Konsesi</span>
+        </h2>
+        <p class="section-subtitle"
+          data-lang-en="Software-as-a-Service (SaaS) annual subscription tailored to monitoring area acreage, sensor density, and analytical complexity."
+          data-lang-id="Model bisnis Software-as-a-Service (SaaS) tahunan disesuaikan dengan luas kawasan hutan, jumlah titik sensor IoT, dan kebutuhan analitik.">
+          Model bisnis Software-as-a-Service (SaaS) tahunan disesuaikan dengan luas kawasan hutan, jumlah titik sensor IoT, dan kebutuhan analitik.
+        </p>
+      </div>
+
+      <div class="pricing-grid stagger-children">
+        <!-- Standard -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3 data-lang-en="Standard" data-lang-id="Standard">Standard</h3>
+            <p class="pricing-target"
+              data-lang-en="Small-to-medium forest concession managers needing essential monitoring."
+              data-lang-id="Pengelola kawasan skala kecil-menengah yang membutuhkan monitoring dasar.">
+              Pengelola kawasan skala kecil-menengah yang membutuhkan monitoring dasar.
+            </p>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-lang-en="Basic IoT Microclimate Telemetry" data-lang-id="Telemetri IoT Mikroklimat Dasar">Telemetri IoT Mikroklimat Dasar</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-lang-en="Dashboard Web & Mobile Access" data-lang-id="Akses Dashboard Web & Mobile">Akses Dashboard Web & Mobile</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-lang-en="Threshold Alert System" data-lang-id="Sistem Notifikasi Ambang Batas">Sistem Notifikasi Ambang Batas</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-lang-en="Standard Support (Working Hours)" data-lang-id="Dukungan Teknis Jam Kerja">Dukungan Teknis Jam Kerja</span>
+            </li>
+          </ul>
+          <button class="pricing-btn" onclick="openModal('demoModal', 'Standard')" data-lang-en="Select Standard" data-lang-id="Pilih Standard">Pilih Standard</button>
+        </div>
+
+        <!-- Premium (Featured) -->
+        <div class="pricing-card featured">
+          <div class="pricing-popular-badge" data-lang-en="RECOMMENDED" data-lang-id="REKOMENDASI">REKOMENDASI</div>
+          <div class="pricing-header">
+            <h3 data-lang-en="Premium" data-lang-id="Premium">Premium</h3>
+            <p class="pricing-target"
+              data-lang-en="Concessions requiring comprehensive monitoring and predictive risk intelligence."
+              data-lang-id="Pengelola kawasan dengan kebutuhan monitoring & analisis risiko komprehensif.">
+              Pengelola kawasan dengan kebutuhan monitoring & analisis risiko komprehensif.
+            </p>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-lang-en="Everything in Standard" data-lang-id="Semua fitur paket Standard">Semua fitur paket Standard</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <strong data-lang-en="AI Risk Prediction Engine" data-lang-id="Mesin Prediksi Risiko AI">Mesin Prediksi Risiko AI</strong>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-lang-en="Environmental Change Anomaly Detection" data-lang-id="Deteksi Anomali Perubahan Hutan">Deteksi Anomali Perubahan Hutan</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-lang-en="Predictive Action Recommendations" data-lang-id="Rekomendasi Tindakan Preventif AI">Rekomendasi Tindakan Preventif AI</span>
+            </li>
+          </ul>
+          <button class="pricing-btn" onclick="openModal('demoModal', 'Premium')" data-lang-en="Select Premium" data-lang-id="Pilih Premium">Pilih Premium</button>
+        </div>
+
+        <!-- Professional -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3 data-lang-en="Professional" data-lang-id="Professional">Professional</h3>
+            <p class="pricing-target"
+              data-lang-en="Forestry companies & plantations requiring custom system integration & APIs."
+              data-lang-id="Perusahaan kehutanan & perkebunan dengan integrasi sistem kustom dan API.">
+              Perusahaan kehutanan & perkebunan dengan integrasi sistem kustom dan API.
+            </p>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-lang-en="Custom API & Webhooks Integration" data-lang-id="Integrasi API Kustom & Webhooks">Integrasi API Kustom & Webhooks</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-lang-en="Multi-Concession Fleet View" data-lang-id="Pemantauan Multi-Konsesi / Blok">Pemantauan Multi-Konsesi / Blok</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-lang-en="High-Density IoT Calibration" data-lang-id="Kalibrasi Sensor IoT Kerapatan Tinggi">Kalibrasi Sensor IoT Kerapatan Tinggi</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-lang-en="Dedicated Account Specialist" data-lang-id="Dedicated Account Specialist">Dedicated Account Specialist</span>
+            </li>
+          </ul>
+          <button class="pricing-btn" onclick="openModal('demoModal', 'Professional')" data-lang-en="Select Professional" data-lang-id="Pilih Professional">Pilih Professional</button>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3 data-lang-en="Enterprise" data-lang-id="Enterprise">Enterprise</h3>
+            <p class="pricing-target"
+              data-lang-en="Large-scale regional authorities, ministries, and major forestry conglomerates."
+              data-lang-id="Pengelola kawasan berskala besar, dinas kehutanan, dan korporasi multisektor.">
+              Pengelola kawasan berskala besar, dinas kehutanan, dan korporasi multisektor.
+            </p>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-lang-en="Full Satellite + Ground AI Fusion" data-lang-id="Fusi Penuh Citra Satelit + Ground IoT">Fusi Penuh Citra Satelit + Ground IoT</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-lang-en="Custom Predictive AI Fine-Tuning" data-lang-id="Fine-Tuning Model AI Khusus Ekosistem">Fine-Tuning Model AI Khusus Ekosistem</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-lang-en="24/7 Command Center Support" data-lang-id="Dukungan Command Center 24/7">Dukungan Command Center 24/7</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-lang-en="On-Site Field Installation & SLA" data-lang-id="Instalasi Lapangan Langsung & SLA">Instalasi Lapangan Langsung & SLA</span>
+            </li>
+          </ul>
+          <button class="pricing-btn" onclick="openModal('demoModal', 'Enterprise')" data-lang-en="Contact Sales" data-lang-id="Hubungi Sales">Hubungi Sales</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SDG IMPACT ALIGNMENT ==================== -->
+  <section class="sdg-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge dark-badge">
+          <span class="badge-dot"></span>
+          <span>UN SUSTAINABLE DEVELOPMENT GOALS</span>
+        </div>
+        <h2 class="section-title light-text">
+          <span data-lang-en="Direct Contribution to" data-lang-id="Kontribusi Nyata Terhadap">Kontribusi Nyata Terhadap</span>
+          <span class="highlight" data-lang-en=" Global Sustainability" data-lang-id=" Keberlanjutan Global"> Keberlanjutan Global</span>
+        </h2>
+      </div>
+
+      <div class="sdg-grid stagger-children">
+        <div class="sdg-card">
+          <div class="sdg-number">SDG 13</div>
+          <h4 data-lang-en="Climate Action" data-lang-id="Penanganan Perubahan Iklim">Penanganan Perubahan Iklim</h4>
+          <p data-lang-en="Mitigating massive carbon emission releases by curbing catastrophic forest and peatland fires before ignition."
+            data-lang-id="Mencegah pelepasan jutaan ton emisi karbon ke atmosfer melalui pencegahan dini kebakaran hutan dan lahan gambut.">
+            Mencegah pelepasan jutaan ton emisi karbon ke atmosfer melalui pencegahan dini kebakaran hutan dan lahan gambut.
+          </p>
+        </div>
+
+        <div class="sdg-card">
+          <div class="sdg-number">SDG 15</div>
+          <h4 data-lang-en="Life on Land" data-lang-id="Ekosistem Daratan">Ekosistem Daratan</h4>
+          <p data-lang-en="Preserving Indonesia's tropical biodiversity, primary rainforest canopy, and fragile flora/fauna habitats from irreversible degradation."
+            data-lang-id="Menjaga keanekaragaman hayati hutan tropis Indonesia, tutupan kanopi alami, serta habitat satwa dari kerusakan permanen.">
+            Menjaga keanekaragaman hayati hutan tropis Indonesia, tutupan kanopi alami, serta habitat satwa dari kerusakan permanen.
+          </p>
+        </div>
+
+        <div class="sdg-card">
+          <div class="sdg-number">SDG 9</div>
+          <h4 data-lang-en="Industry & Innovation" data-lang-id="Industri, Inovasi & Infrastruktur">Industri, Inovasi & Infrastruktur</h4>
+          <p data-lang-en="Deploying advanced IoT mesh networks, artificial intelligence, and cloud telemetry into sustainable forestry management."
+            data-lang-id="Mengakselerasi transformasi digital sektor kehutanan nasional melalui adopsi teknologi sensor IoT dan sistem machine learning mutakhir.">
+            Mengakselerasi transformasi digital sektor kehutanan nasional melalui adopsi teknologi sensor IoT dan sistem machine learning mutakhir.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CALL TO ACTION / DOWNLOAD OR DEMO ==================== -->
+  <section class="download" id="download">
+    <div class="container">
+      <div class="cta-card reveal-scale">
+        <div class="cta-orbs">
+          <div class="cta-orb"></div>
+          <div class="cta-orb"></div>
+        </div>
+
+        <div class="cta-content">
+          <svg class="cta-icon" viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="46" fill="#04261C" stroke="#00F5A0" stroke-width="2" />
+            <path d="M50 20 C36 36 38 64 50 78 C62 64 64 36 50 20 Z" fill="#10B981" />
+            <path d="M50 32 C42 44 44 58 50 68 C56 58 58 44 50 32 Z" fill="#00F5A0" />
+          </svg>
+
+          <h2 data-lang-en="Safeguard Your Forest Concession with Forest Foresight"
+            data-lang-id="Amankan Konsesi Hutan Anda dengan Forest Foresight">
+            Amankan Konsesi Hutan Anda dengan Forest Foresight
+          </h2>
+          <p data-lang-en="Join forward-thinking forestry agencies, concessionaires, and conservation managers in transitioning from reactive fire extinguishing to predictive AI protection. Request a pilot demonstration tailored to your sector."
+            data-lang-id="Bergabunglah bersama dinas kehutanan, pemegang konsesi HPH/HPHT, dan pengelola konservasi dalam mentransformasi perlindungan hutan menuju era prediktif AI. Konsultasikan kebutuhan pilot project kawasan Anda sekarang.">
+            Bergabunglah bersama dinas kehutanan, pemegang konsesi HPH/HPHT, dan pengelola konservasi dalam mentransformasi perlindungan hutan menuju era prediktif AI. Konsultasikan kebutuhan pilot project kawasan Anda sekarang.
+          </p>
+
+          <div class="cta-actions">
+            <button class="btn-primary" onclick="openModal('demoModal')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              <span data-lang-en="Request Pilot Deployment" data-lang-id="Jadwalkan Konsultasi Pilot">Jadwalkan Konsultasi Pilot</span>
+            </button>
+            <a href="#prototype" class="btn-secondary">
+              <span data-lang-en="Test Interactive Prototype" data-lang-id="Coba Prototype Interaktif">Coba Prototype Interaktif</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Info -->
+        <div class="footer-brand">
+          <a href="#" class="footer-logo" aria-label="FORESTIQ">
+            <img src="assets/images/forestiq_horizontal_light.png" alt="FORESTIQ" class="footer-logo-img" />
+          </a>
+          <p data-lang-en="AI-Powered Forest Foresight through IoT Integration for Predictive and Sustainable Forest Protection. Developed for SPECTRA 2026."
+            data-lang-id="AI-Powered Forest Foresight through IoT Integration for Predictive and Sustainable Forest Protection. Dikembangkan untuk kompetisi SPECTRA 2026.">
+            AI-Powered Forest Foresight through IoT Integration for Predictive and Sustainable Forest Protection. Dikembangkan untuk kompetisi SPECTRA 2026.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.13C5.12 19.56 12 19.56 12 19.56s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 1 -->
+        <div class="footer-col">
+          <h4 data-lang-en="Platform" data-lang-id="Platform">Platform</h4>
+          <a href="#about" data-lang-en="About FORESTIQ" data-lang-id="Tentang FORESTIQ">Tentang FORESTIQ</a>
+          <a href="#features" data-lang-en="6 Value Pillars" data-lang-id="6 Pilar Nilai">6 Pilar Nilai</a>
+          <a href="#simulator" data-lang-en="FHI Simulator" data-lang-id="Simulator FHI">Simulator FHI</a>
+          <a href="#prototype" data-lang-en="Mobile Prototype" data-lang-id="Prototype Mobile">Prototype Mobile</a>
+          <a href="#comparison" data-lang-en="Competitive Matrix" data-lang-id="Komparasi Fitur">Komparasi Fitur</a>
+        </div>
+
+        <!-- Col 2 -->
+        <div class="footer-col">
+          <h4 data-lang-en="Ecosystem" data-lang-id="Ekosistem">Ekosistem</h4>
+          <a href="#pricing" data-lang-en="B2B Pricing" data-lang-id="Paket Layanan B2B">Paket Layanan B2B</a>
+          <a href="#sponsors" data-lang-en="CDK Sumenep Collaboration" data-lang-id="Kolaborasi CDK Sumenep">Kolaborasi CDK Sumenep</a>
+          <a href="#sponsors" data-lang-en="SPECTRA Competition" data-lang-id="Kompetisi SPECTRA">Kompetisi SPECTRA</a>
+          <a href="#sponsors" data-lang-en="SDGs Alignment" data-lang-id="Dukungan SDGs">Dukungan SDGs</a>
+        </div>
+
+        <!-- Col 3 -->
+        <div class="footer-col">
+          <h4 data-lang-en="Contact" data-lang-id="Kontak">Kontak</h4>
+          <a href="mailto:cifil123456789@gmail.com">cifil123456789@gmail.com</a>
+          <a href="tel:081111442344">0811-1144-2344</a>
+          <p style="font-size:0.85rem; color:#64748B; margin-top:8px;">Surabaya, Jawa Timur, Indonesia</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 FORESTIQ. <span data-lang-en="All rights reserved. Dedicated to Indonesia's Sustainable Forest Protection." data-lang-id="Hak cipta dilindungi. Didedikasikan untuk Perlindungan Hutan Berkelanjutan Indonesia.">Hak cipta dilindungi. Didedikasikan untuk Perlindungan Hutan Berkelanjutan Indonesia.</span></p>
+        <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20">
+            <polyline points="18 15 12 9 6 15"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== DEMO / PILOT CONSULTATION MODAL ==================== -->
+  <div class="modal-overlay" id="demoModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal('demoModal')">✕</button>
+      <h3 style="font-family:'Inter',sans-serif; font-size:1.5rem; font-weight:800; margin-bottom:8px; color:var(--text-primary);" data-lang-en="Schedule Consultation & Pilot Project" data-lang-id="Jadwalkan Konsultasi & Pilot Project">
+        Jadwalkan Konsultasi & Pilot Project
+      </h3>
+      <p style="font-size:0.92rem; color:var(--text-secondary); margin-bottom:24px;" data-lang-en="Collaborate with FORESTIQ engineers to assess your forest concession telemetry and configure a predictive early warning deployment." data-lang-id="Berkolaborasi bersama tim teknis FORESTIQ untuk evaluasi telemetri kawasan hutan Anda dan implementasi sistem early warning prediktif.">
+        Berkolaborasi bersama tim teknis FORESTIQ untuk evaluasi telemetri kawasan hutan Anda dan implementasi sistem early warning prediktif.
+      </p>
+
+      <form id="consultForm" onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <label data-lang-en="Full Name" data-lang-id="Nama Lengkap">Nama Lengkap</label>
+          <input type="text" required placeholder="Contoh: Cristiano Ifil" id="formName" />
+        </div>
+        <div class="form-group">
+          <label data-lang-en="Organization / Concession" data-lang-id="Nama Instansi / Perusahaan Konsesi">Nama Instansi / Perusahaan Konsesi</label>
+          <input type="text" required placeholder="Contoh: Cabang Dinas Kehutanan / PT HPH Lestari" id="formOrg" />
+        </div>
+        <div class="form-group">
+          <label data-lang-en="Official Email" data-lang-id="Email Resmi">Email Resmi</label>
+          <input type="email" required placeholder="nama@instansi.go.id atau perhutani.co.id" id="formEmail" />
+        </div>
+        <div class="form-group">
+          <label data-lang-en="Interested Plan" data-lang-id="Paket Layanan yang Diminati">Paket Layanan yang Diminati</label>
+          <select id="formPlan">
+            <option value="Standard">Standard Subscription (Monitoring Dasar)</option>
+            <option value="Premium" selected>Premium Subscription (AI Risk Prediction)</option>
+            <option value="Professional">Professional Subscription (Custom API & IoT)</option>
+            <option value="Enterprise">Enterprise Subscription (Full Government/SLA)</option>
+            <option value="Pilot">Pilot Project Assessment</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-lang-en="Estimated Forest Acreage (Hectares)" data-lang-id="Estimasi Luas Area Kawasan (Hektare)">Estimasi Luas Area Kawasan (Hektare)</label>
+          <input type="text" placeholder="Contoh: 15.000 ha" id="formArea" />
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">
+          <span data-lang-en="Submit Consultation Request" data-lang-id="Kirim Permohonan Konsultasi">Kirim Permohonan Konsultasi</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== ORIGINAL PROTOTYPE SHEET MODAL ==================== -->
+  <div class="modal-overlay" id="originalProtoModal">
+    <div class="modal-card" style="max-width:920px;">
+      <button class="modal-close" onclick="closeModal('originalProtoModal')">✕</button>
+      <h3 style="font-family:'Inter',sans-serif; font-size:1.4rem; font-weight:800; margin-bottom:8px; color:var(--text-primary);" data-lang-en="Design Prototype Reference (Figma / Sketch)" data-lang-id="Dokumentasi Desain Prototype Asli">
+        Dokumentasi Desain Prototype Asli
+      </h3>
+      <p style="font-size:0.92rem; color:var(--text-secondary); margin-bottom:20px;" data-lang-en="Original design prototype uploaded by the team showing the 5 mobile system screens." data-lang-id="Dokumentasi desain rancangan antarmuka mobile FORESTIQ (Dashboard, Warning Detected, Change Alert, Recommendation, Profile).">
+        Dokumentasi desain rancangan antarmuka mobile FORESTIQ (Dashboard, Warning Detected, Change Alert, Recommendation, Profile).
+      </p>
+      <div style="background:#04140E; border-radius:16px; overflow:hidden; padding:10px; border:1px solid rgba(16,185,129,0.3);">
+        <img src="assets/images/prototype_all.png" alt="FORESTIQ Prototype Suite" style="width:100%; height:auto; border-radius:10px;" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SCREEN ZOOM MODAL ==================== -->
+  <div class="modal-overlay" id="screenZoomModal">
+    <div class="modal-card" style="max-width:440px; text-align:center; padding:24px; background:#04140E; border:1px solid rgba(52,211,153,0.35); box-shadow:0 30px 80px rgba(0,0,0,0.6);">
+      <button class="modal-close" onclick="closeModal('screenZoomModal')" style="background:rgba(255,255,255,0.12); color:#fff; top:16px; right:16px;">✕</button>
+      <div style="margin-top:14px; margin-bottom:12px;">
+        <img id="zoomModalImg" src="assets/images/proto_dashboard.png" alt="FORESTIQ Screen Zoom" style="width:100%; height:auto; border-radius:32px; box-shadow:0 15px 45px rgba(0,0,0,0.5);" />
+      </div>
+      <div id="zoomModalTitle" style="color:#00F5A0; font-weight:800; font-size:1.15rem; font-family:'Inter',sans-serif;">Forest Intelligence Dashboard</div>
+      <div id="zoomModalSub" style="color:#94A3B8; font-size:0.85rem; margin-top:4px;">High-Resolution Mobile Prototype Screen</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
